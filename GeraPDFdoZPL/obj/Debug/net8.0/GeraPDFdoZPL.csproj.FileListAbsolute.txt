@@ -1,0 +1,17 @@
+C:\Users\joaov\OneDrive\Desktop\GeraPDFdoZBL\GeraPDFdoZBL\bin\Debug\net8.0\GeraPDFdoZPL.exe
+C:\Users\joaov\OneDrive\Desktop\GeraPDFdoZBL\GeraPDFdoZBL\bin\Debug\net8.0\GeraPDFdoZPL.deps.json
+C:\Users\joaov\OneDrive\Desktop\GeraPDFdoZBL\GeraPDFdoZBL\bin\Debug\net8.0\GeraPDFdoZPL.runtimeconfig.json
+C:\Users\joaov\OneDrive\Desktop\GeraPDFdoZBL\GeraPDFdoZBL\bin\Debug\net8.0\GeraPDFdoZPL.dll
+C:\Users\joaov\OneDrive\Desktop\GeraPDFdoZBL\GeraPDFdoZBL\bin\Debug\net8.0\GeraPDFdoZPL.pdb
+C:\Users\joaov\OneDrive\Desktop\GeraPDFdoZBL\GeraPDFdoZBL\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\joaov\OneDrive\Desktop\GeraPDFdoZBL\GeraPDFdoZBL\obj\Debug\net8.0\GeraPDFdoZPL.csproj.AssemblyReference.cache
+C:\Users\joaov\OneDrive\Desktop\GeraPDFdoZBL\GeraPDFdoZBL\obj\Debug\net8.0\GeraPDFdoZPL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\joaov\OneDrive\Desktop\GeraPDFdoZBL\GeraPDFdoZBL\obj\Debug\net8.0\GeraPDFdoZPL.AssemblyInfoInputs.cache
+C:\Users\joaov\OneDrive\Desktop\GeraPDFdoZBL\GeraPDFdoZBL\obj\Debug\net8.0\GeraPDFdoZPL.AssemblyInfo.cs
+C:\Users\joaov\OneDrive\Desktop\GeraPDFdoZBL\GeraPDFdoZBL\obj\Debug\net8.0\GeraPDFdoZPL.csproj.CoreCompileInputs.cache
+C:\Users\joaov\OneDrive\Desktop\GeraPDFdoZBL\GeraPDFdoZBL\obj\Debug\net8.0\GeraPDFd.4C373B5C.Up2Date
+C:\Users\joaov\OneDrive\Desktop\GeraPDFdoZBL\GeraPDFdoZBL\obj\Debug\net8.0\GeraPDFdoZPL.dll
+C:\Users\joaov\OneDrive\Desktop\GeraPDFdoZBL\GeraPDFdoZBL\obj\Debug\net8.0\refint\GeraPDFdoZPL.dll
+C:\Users\joaov\OneDrive\Desktop\GeraPDFdoZBL\GeraPDFdoZBL\obj\Debug\net8.0\GeraPDFdoZPL.pdb
+C:\Users\joaov\OneDrive\Desktop\GeraPDFdoZBL\GeraPDFdoZBL\obj\Debug\net8.0\GeraPDFdoZPL.genruntimeconfig.cache
+C:\Users\joaov\OneDrive\Desktop\GeraPDFdoZBL\GeraPDFdoZBL\obj\Debug\net8.0\ref\GeraPDFdoZPL.dll
