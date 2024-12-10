@@ -61,9 +61,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\joaov\\OneDrive\\Desktop\\GeraPDFdoZPL\\GeraPDFdoZPL\\GeraPDFdoZPL.csproj",
-      "projectName": "GeraPDFdoZPL",
-      "projectPath": "C:\\Users\\joaov\\OneDrive\\Desktop\\GeraPDFdoZPL\\GeraPDFdoZPL\\GeraPDFdoZPL.csproj",
+      "projectUniqueName": "C:\\Users\\joaov\\OneDrive\\Desktop\\GeraPDFdoZPL\\GeraPDFdoZPL\\GeraPDFdoZPL1.0.csproj",
+      "projectName": "GeraPDFdoZPL1.0",
+      "projectPath": "C:\\Users\\joaov\\OneDrive\\Desktop\\GeraPDFdoZPL\\GeraPDFdoZPL\\GeraPDFdoZPL1.0.csproj",
       "packagesPath": "C:\\Users\\joaov\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\joaov\\OneDrive\\Desktop\\GeraPDFdoZPL\\GeraPDFdoZPL\\obj\\",
       "projectStyle": "PackageReference",

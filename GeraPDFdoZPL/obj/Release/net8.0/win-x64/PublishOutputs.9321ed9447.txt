@@ -1,0 +1,2 @@
+C:\Users\joaov\OneDrive\Desktop\GeraPDFdoZPL\GeraPDFdoZPL\bin\Release\net8.0\win-x64\publish\GeraPDFdoZPL.pdb
+C:\Users\joaov\OneDrive\Desktop\GeraPDFdoZPL\GeraPDFdoZPL\bin\Release\net8.0\win-x64\publish\GeraPDFdoZPL.exe
