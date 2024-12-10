@@ -4,7 +4,6 @@ using System.Net.Http;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using Newtonsoft.Json.Linq;
 using System.Diagnostics;
 using System.Net;
 
@@ -25,22 +24,49 @@ class Program
             Console.WriteLine(filePath);
             Console.ReadKey();
             return;
-        }
-        for (int i = 0; i < files.Length; i++)
+        }else	
         {
-            string fileText = await File.ReadAllTextAsync(files[i]);
-            fileContent = Encoding.UTF8.GetBytes(fileText);
-            await BuildRequest(fileContent);
+            Console.WriteLine($"Foram encontrados {files.Length} arquivos zpl na pasta!");
         }
+        foreach (string file in files)
+        {
+            string FileText = await File.ReadAllTextAsync(file);
+            string[] etiquetas = FileText.Split(new[] { "~DGR:DEMO"}, StringSplitOptions.RemoveEmptyEntries);
 
+            Console.WriteLine($"\nTotal de entiquetas encontradas: {etiquetas.Length}");
+            int totalGrupos = (int)Math.Ceiling(etiquetas.Length / 15.0);
+            Console.WriteLine($"Serão processados {totalGrupos} grupos");
+
+            for(int i=0; i<etiquetas.Length; i+=15)
+            {
+                int grupoAtual = (i/15) + 1;
+                int etiquetasNesteGrupo = Math.Min(15, etiquetas.Length - i);
+
+                Console.WriteLine($"\nProcessando grupo {grupoAtual} de {totalGrupos}");
+                Console.WriteLine($"Processando etiquetas {i + 1} até {i + etiquetasNesteGrupo}");
+
+                var grupoEtiquetas = etiquetas.Skip(i).Take(15).ToList();
+                string zplGrupo = string.Join("~DGR:DEMO", grupoEtiquetas);
+                if(!string.IsNullOrWhiteSpace(zplGrupo))
+                {
+                    zplGrupo = "~DGR:DEMO" + zplGrupo;
+                }
+                fileContent = Encoding.UTF8.GetBytes(zplGrupo);
+                await BuildRequest(fileContent);
+                // Delay entre os grupos
+                await Task.Delay(3000);
+            }
+        }
+        Console.WriteLine("\nProcessamento concluído!");
         Environment.Exit(1);
     }
 
     static async Task BuildRequest(byte[] fileContent)
     {
+        //Montando a requisição da API
         var request = (HttpWebRequest)WebRequest.Create("http://api.labelary.com/v1/printers/8dpmm/labels/4x6/");
         request.Method = "POST";
-        request.Accept = "application/pdf"; // omit this line to get PNG images back
+        request.Accept = "application/pdf";
         request.ContentType = "application/x-www-form-urlencoded";
         request.ContentLength = fileContent.Length;
 
@@ -52,26 +78,22 @@ class Program
         {
             var response = (HttpWebResponse)request.GetResponse();
             var responseStream = response.GetResponseStream();
+            //Ajusto o nome do PDF a ser salvo e caminho
             string pdfDirectory = filePath;
             string pdfFileNamePattern = "zplPDF";
             string pdfFileExtension = ".pdf";
             int nextFileNumber = GetNextFileNumber(pdfDirectory, pdfFileNamePattern, pdfFileExtension);
             string pdfFilePath = Path.Combine(pdfDirectory, $"{pdfFileNamePattern}{nextFileNumber}{pdfFileExtension}");
-
-            var fileStream = File.Create(pdfFilePath); // change file name for PNG images
-            //var fileStream = File.Create("teste"); // change file name for PNG images
+            //Copio a resposta da API para o conteúdo do PDF e gravo
+            var fileStream = File.Create(pdfFilePath);
             responseStream.CopyTo(fileStream);
             responseStream.Close();
             fileStream.Close();
         }
         catch (WebException e)
         {
-            Console.WriteLine("Error: {0}", e.Status);
+            Console.WriteLine("Error: {0}", e.Response);
         }
-
-
-
-        //await SendJsonAndSavePdf(pdfFilePath);
     }
 
     static int GetNextFileNumber(string directory, string fileNamePattern, string fileExtension)
@@ -85,27 +107,4 @@ class Program
 
         return existingFiles.Count > 0 ? existingFiles.Max() + 1 : 1;
     }
-    /*
-    static async Task SendJsonAndSavePdf(string pdfFilePath)
-    {
-
-        using (HttpClient client = new HttpClient())
-        {
-            var content = new StringContent(jsonContent, Encoding.UTF8, "text/plain");
-            HttpResponseMessage response = await client.PostAsync("https://api.labelary.com/v1/printers/8dpmm/labels/4x6/0/", content);
-
-            if (response.IsSuccessStatusCode)
-            {
-                byte[] pdfBytes = await response.Content.ReadAsByteArrayAsync();
-                await File.WriteAllBytesAsync(pdfFilePath, pdfBytes);
-                Console.WriteLine("PDF salvo com sucesso!");
-            }
-            else
-            {
-                Console.WriteLine("Erro ao enviar o JSON: " + response.ReasonPhrase);
-                Console.WriteLine("Tente novamente ou tente outro arquivo. Lembre-se de teclar qualquer tecla para encerar");
-                Console.ReadKey();
-            }
-        }
-    }*/
 }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GeraPDFdoZPL2.0")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a217dd92dc30a3481d729e4975506573f3b4f51e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5d3b58724deacf8a0180e46dfac59a39fb3b90c7")]
 [assembly: System.Reflection.AssemblyProductAttribute("GeraPDFdoZPL2.0")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GeraPDFdoZPL2.0")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
